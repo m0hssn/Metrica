@@ -4,6 +4,8 @@ from torchmetrics.classification import Recall
 from torchmetrics.classification import Precision
 from torchmetrics.classification import AUROC
 from torchmetrics.classification import MulticlassAveragePrecision
+import torch
+
 
 class Metrica:
     def __init__(self, num_classes=3, task="multiclass"):
