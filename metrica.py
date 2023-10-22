@@ -37,7 +37,7 @@ class Metrica:
         self.y_hat = []
         self.y = []
 
-    def f1_score(self):
+    def f1_score(self, average='macro'):
         """
         Method to calculate the F1 score for the stored predicted and ground truth values.
         Returns:
@@ -46,7 +46,7 @@ class Metrica:
         y = torch.cat(self.y).to('cpu')
         y_hat = torch.cat(self.y_hat).to('cpu')
 
-        metric = MulticlassF1Score(num_classes=self.num_classes)
+        metric = MulticlassF1Score(num_classes=self.num_classes, average=average)
 
         return metric(y_hat, y)
 
